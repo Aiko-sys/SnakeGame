@@ -12,7 +12,7 @@ Clone the repository and open its folder
 ```
 git clone https://github.com/Richxz/SnakeGame.git
 ```
-Installpygame
+Install pygame
 ```
 cd SnakeGame
 ```
