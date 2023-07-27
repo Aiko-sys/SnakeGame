@@ -14,6 +14,9 @@ git clone https://github.com/Richxz/SnakeGame.git
 ```
 Install Requirments
 ```
+cd SnakeGame
+```
+```
 python -m pip install -U requirments.txt --user
 ```
 Open The game
