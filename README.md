@@ -12,4 +12,12 @@ Clone the repository and open its folder
 ```
 Git clone https://github.com/Richxz/SnakeGame.git
 cd SnakeGame
-````
+```
+Install Requirments
+```
+python -m pip install -U requirments.txt --user
+```
+Open The game
+```
+python main.py
+```
