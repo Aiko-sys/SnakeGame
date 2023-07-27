@@ -14,13 +14,18 @@ xcontr = 20
 ycontr = 0
 tick = 16
 pontos = 0
+
+
 font = pygame.font.SysFont('arial', 40, True, False)
+font_game_over =pygame.font.SysFont('arial', 80, True, False)
+font_game_over_msg =pygame.font.SysFont('arial', 30, True, False)
+
 
 x_circl = randint(10, largura)
 y_circl = randint(10, altura)
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('Snake Game')
-comprimento_cobra = 1
+comprimento_cobra = 3
 lista_toda = []
 def Corpo(lista_toda):
     for xy in lista_toda:
@@ -34,8 +39,9 @@ Point = pygame.mixer.Sound("songs/Point.wav")
 clock = pygame.time.Clock()
 death = False
 def restart():
-    global pontos, x_rect, y_rect, lista_toda, Lista_cbc, death, x_circl, y_circl, tick
+    global pontos, x_rect, y_rect, lista_toda, Lista_cbc, death, x_circl, y_circl, tick, comprimento_cobra 
     pontos = 0
+    comprimento_cobra = 3
     x_rect = largura/2
     y_rect= altura/2
     tick = 16
@@ -43,13 +49,17 @@ def restart():
     lista_toda = []
     x_circl = randint(10, largura)
     y_circl = randint(10, altura)
-
+    death = False
 
 while not death:
 
-    msg = f'Points : {pontos}'
+    game_over = f'Game Over'
+    game_over_msg = f'press SPACE to Restart'   
+    msg = f'Score : {pontos}'
     clock.tick(tick)
     tela.fill((255, 255, 255))
+    formated_game_over = font_game_over.render(game_over, True, (0, 0, 0))
+    formated_game_over_msg = font_game_over_msg.render(game_over_msg, True, (255, 0, 0))
     formated = font.render(msg, False, (0, 0, 0))
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -92,16 +102,23 @@ while not death:
     Lista_cbc.append(y_rect)
     lista_toda.append(Lista_cbc)
     Corpo(lista_toda)
+
     if lista_toda.count(Lista_cbc) > 1:
         death = True
-        while True:
+        while death:
+            tela.fill((255, 255, 255))
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()
                     exit()
                 if event.type == KEYDOWN:
-                    if event.key == K_r:
+                    if event.key == K_SPACE:
                         restart()
+            tela.blit(formated_game_over, (320, altura/2-130))
+            tela.blit(formated_game_over_msg, (355, altura/2-40))
+            pygame.display.update()
+
+
     if len(lista_toda) > comprimento_cobra:
             del lista_toda[0]
     tela.blit(formated, (800, 50))
