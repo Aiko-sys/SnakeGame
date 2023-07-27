@@ -17,7 +17,7 @@ Install Requirments
 cd SnakeGame
 ```
 ```
-python -m pip install -U requirments.txt --user
+python -m pip install -U requirements.txt --user
 ```
 Open The game
 ```
