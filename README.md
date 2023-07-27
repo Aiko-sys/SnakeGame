@@ -1,7 +1,7 @@
 # SnakeGame
 Its Just the Snake Game
 <p align=center>
-  <img height=360 width=700 src="https://github.com/Richxz/SnakeGame/blob/main/preview/SnakeGame.png">
+  <img height=360 width=710 src="https://github.com/Richxz/SnakeGame/blob/main/preview/SnakeGame.png">
 </p>
 
 ## Installation (Windows)
@@ -10,7 +10,7 @@ Open Windows Terminal.
 
 Clone the repository and open its folder
 ```
-Git clone https://github.com/Richxz/SnakeGame.git
+git clone https://github.com/Richxz/SnakeGame.git
 ```
 Install Requirments
 ```
