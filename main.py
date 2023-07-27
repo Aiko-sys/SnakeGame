@@ -117,6 +117,15 @@ while not death:
             tela.blit(formated_game_over, (320, altura/2-130))
             tela.blit(formated_game_over_msg, (355, altura/2-40))
             pygame.display.update()
+    if x_rect > largura:
+        x_rect = 0
+    elif x_rect < 0:
+        x_rect = largura    
+    if y_rect > altura:
+        y_rect = 0
+    elif y_rect < 0:
+        y_rect = altura
+
 
 
     if len(lista_toda) > comprimento_cobra:
