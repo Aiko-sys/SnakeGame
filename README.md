@@ -17,7 +17,7 @@ Install pygame
 cd SnakeGame
 ```
 ```
-python -m pip install -U pygame=2.5.0 --user
+python -m pip install -U pygame==2.5.0 --user
 ```
 Open The game
 ```
