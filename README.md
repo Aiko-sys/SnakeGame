@@ -12,15 +12,14 @@ Clone the repository and open its folder
 ```
 git clone https://github.com/Richxz/SnakeGame.git
 ```
-Install pygame
 ```
 cd SnakeGame
 ```
+if you don't have the pygame lib, Install.
 ```
-python -m pip install -U pygame==2.5.0 --user
+start install.bat
 ```
 Open The game
 ```
-cd SnakeGame
-python main.py
+start SnakeGame.bat
 ```
